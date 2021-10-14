@@ -82,11 +82,9 @@ print_doll(void)
 {	
 	char *file = "Squid-Game.ascii.txt";
 	FILE *doll = fopen(file,"r");
-	if(!doll) {
-		perror(file);
-	     	doll = NULL;
-		return;
-	}
+	if(!doll)
+		return perror(file);
+	
 	char c = '\0';
 	while((c = fgetc(doll)) != EOF) {
 		putchar(c);
